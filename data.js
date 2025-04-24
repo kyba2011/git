@@ -6,7 +6,7 @@ const menuItems =
         price:  23.8,
         img: '././img/chees.svg'
     },
-    {
+    {   
         id: 2,
         title: 'Coffee',
         price: 12.5,
