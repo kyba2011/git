@@ -1,7 +1,7 @@
 let menuList = document.querySelector('#menuList')
 let orderList = document.querySelector('#orderList')
-let summa = document.querySelector('#summa')
-let itemsCount = document.querySelector('#itemsCount')
+let sum = document.querySelector('#sum')
+let count = document.querySelector('#count')
 
 
 
@@ -13,7 +13,7 @@ const createMenu = (product) => {
         <img src="${product.img}" class="foodImg">
              <div>
                  <div> ${product.title}  </div>
-                 <div> ${product.price} som </div>
+                 <div> ${product.price}$ </div>
              </div>
     </div>
     `
@@ -32,7 +32,7 @@ const createList = (menu) => {
      <li>
         <div> ${menu.title} </div>
         <div> ${menu.count} </div>
-        <div> ${menu.price} </div>
+        <div> ${menu.price}$ </div>
         <div onclick="deleteMenu(event)" data-order='${JSON.stringify(menu)}' class="clear"> X </div>
     </li>
     `
@@ -58,7 +58,7 @@ const clickMenu = (event) => {
     }
 
     renderList(basket)
-    plusSumma()
+    plusSum()
     plusCount()
 }
 
@@ -75,16 +75,16 @@ const deleteMenu = (event) => {
         basket.splice(index, 1)
         renderList(basket)
     }
-    plusSumma()
+    plusSum()
     plusCount()
 }
 
-const plusSumma = () => {
-    summa.innerHTML = basket.reduce( (el, {price}) => el + price, 0 )
+const plusSum = () => {
+    sum.innerHTML = basket.reduce( (el, {price}) => el + price, 0 )
 }
 
 const plusCount = () => {
-    itemsCount.innerHTML = basket.reduce( (el, {count}) => el + count, 0 )
+    count.innerHTML = basket.reduce( (el, {count}) => el + count, 0 )
 }
 
 renderMenu(menuItems)

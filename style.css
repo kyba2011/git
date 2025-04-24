@@ -2,22 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .container{
-    display: flex;
-    height: 100vh;
+    display: flex;  
 }
 .menuBlock{
     width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+    padding: 30px 40px;
     background: rgb(227, 222, 214);
 }
 h4{
-    font-size: 25px;
+    font-size: 22px;
 }
 .orderBlock{
     width: 40%;
@@ -31,9 +30,9 @@ h4{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 300px;
-    height: 180px;
-    padding: 10px 20px;
+    width: 280px;
+    height: 160px;
+    padding: 8px 18px;
     background: #70559b;
     color: white;
     font-size: 20px;
@@ -41,25 +40,26 @@ h4{
     font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 28px;
+    margin-bottom: 38px;
     line-height: 40px;
+    transition: 0.5s ease-in-out;
 }
 .foodCard:hover{
-    box-shadow: 30px 10px 30px rgba(40, 3, 49, 0.9);
-    transition: .5s ease-in-out;
-    border: 4px solid white;
+    box-shadow: 2px 7px 15px rgba(40, 3, 49, 0.9);
+    transition: 0.5s ease-in-out;
+
 }
 .foodImg{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 #menuList{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 40px;
-    padding: 0 50px;
+    padding: 0 40px;
 }
 #orderList{
     width: 80%;
@@ -69,15 +69,15 @@ li{
     justify-content: space-between;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    border: 3px solid;
-    width: 500px;
-    height: 50px;
+    border: 2px solid;
+    width: 95%;
     padding: 9px;
     margin: 15px;
     background: #70559b;
     color: white;
     font-size: 20px;
     text-align: center;
+    align-items: center;
     font-weight: 600;
     border-radius: 6px;
     margin-bottom: 20px;
