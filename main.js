@@ -56,7 +56,6 @@ const clickMenu = (event) => {
         bs[index].count ++
         bs[index].price += card.price
     }
-
     renderList(bs)
     plusSum()
     plusCount()
