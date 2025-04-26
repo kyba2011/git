@@ -48,43 +48,43 @@ const renderList = (list) => {
 
 const clickMenu = (event) => {
     let card = JSON.parse(event.currentTarget.dataset.product)
-    let index = basket.findIndex( el => el.id == card.id)
+    let index = bs.findIndex( el => el.id == card.id)
 
     if( index ==  -1 ){
-        basket.push({...card, count: 1})
+        bs.push({...card, count: 1})
     } else{
-        basket[index].count ++
-        basket[index].price += card.price
+        bs[index].count ++
+        bs[index].price += card.price
     }
 
-    renderList(basket)
+    renderList(bs)
     plusSum()
     plusCount()
 }
 
 const deleteMenu = (event) => {
     let item = JSON.parse(event.currentTarget.dataset.order)
-    let index = basket.findIndex( el => el.id == item.id)
+    let index = bs.findIndex( el => el.id == item.id)
     let priceList = menuItems.find( el => el.id == item.id).price
 
     if(item.count > 1){
-        basket[index].count --
-        basket[index].price -= priceList
-        renderList(basket)
+        bs[index].count --
+        bs[index].price -= priceList
+        renderList(bs)
     } else{
-        basket.splice(index, 1)
-        renderList(basket)
+        bs.splice(index, 1)
+        renderList(bs)
     }
     plusSum()
     plusCount()
 }
 
 const plusSum = () => {
-    sum.innerHTML = basket.reduce( (el, {price}) => el + price, 0 )
+    sum.innerHTML = bs.reduce( (el, {price}) => el + price, 0 )
 }
 
 const plusCount = () => {
-    count.innerHTML = basket.reduce( (el, {count}) => el + count, 0 )
+    count.innerHTML = bs.reduce( (el, {count}) => el + count, 0 )
 }
 
 renderMenu(menuItems)
